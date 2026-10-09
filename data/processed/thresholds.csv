@@ -1,0 +1,7 @@
+profile,default_threshold_ugm3,source
+general,25.0,"Air Quality NSW (2025), Health advice: activity guide: advice for everyone else changes at Poor (>25 µg/m³, 24-h)"
+asthma_copd,16.75,"Air Quality NSW (2025), Health advice: activity guide: advice for sensitive groups changes at Fair (>=16.75 µg/m³, 24-h)"
+heart_disease,16.75,"Air Quality NSW (2025), Health advice: activity guide: advice for sensitive groups changes at Fair (>=16.75 µg/m³, 24-h)"
+pregnancy,16.75,"Air Quality NSW (2025), Health advice: activity guide: advice for sensitive groups changes at Fair (>=16.75 µg/m³, 24-h)"
+children,16.75,"Air Quality NSW (2025), Health advice: activity guide: advice for sensitive groups changes at Fair (>=16.75 µg/m³, 24-h)"
+older_adults,16.75,"Air Quality NSW (2025), Health advice: activity guide: advice for sensitive groups changes at Fair (>=16.75 µg/m³, 24-h)"

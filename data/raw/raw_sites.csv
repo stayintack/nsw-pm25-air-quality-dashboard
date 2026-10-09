@@ -1,0 +1,140 @@
+Site_Id,SiteName,Longitude,Latitude,Region
+33,RANDWICK,151.24278,-33.93175,Sydney East
+39,ROZELLE,151.16395,-33.86433,Sydney East
+70,LINDFIELD,151.1509,-33.78113,Sydney East
+107,LIVERPOOL,150.90727,-33.93132,Sydney South-west
+171,BRINGELLY,150.76192,-33.91766,Sydney South-west
+190,CHULLORA,151.0461,-33.89156,Sydney East
+206,EARLWOOD,151.13577,-33.91619,Sydney East
+259,WYONG,151.43239,-33.27891,Central Coast
+287,WALLSEND,151.67021,-32.89435,Lower Hunter
+294,CARRINGTON,151.76335,-32.90964,Newcastle Local
+295,STOCKTON,151.78429,-32.90201,Newcastle Local
+300,NEWCASTLE,151.75965,-32.9312,Lower Hunter
+304,MAYFIELD,151.72842,-32.88488,Newcastle Local
+322,BERESFIELD,151.66099,-32.79677,Lower Hunter
+340,TAMWORTH,150.91451,-31.1099,North-west Slopes
+500,WOLLONGONG,150.88733,-34.41706,Illawarra
+526,KEMBLA GRANGE,150.81913,-34.47408,Illawarra
+573,RICHMOND,150.74731,-33.61641,Sydney North-west
+574,BARGO,150.58061,-34.30621,Sydney South-west
+640,ALBURY,146.93986,-36.05182,South-west Slopes
+650,WAGGA WAGGA,147.360846,-35.115598,South-west Slopes
+760,ST MARYS,150.76677,-33.79512,Sydney North-west
+765,VINEYARD,150.847682,-33.65623,Sydney North-west
+795,BATHURST,149.57456,-33.40178,Central Tablelands
+914,PORT KEMBLA STEELWORKS,150.881703,-34.47964,Port Kembla Steelworks
+919,PARRAMATTA NORTH,150.99777,-33.7995,Sydney North-west
+1560,MACARTHUR,150.78218,-34.07087,Sydney South-west
+1570,OAKDALE,150.49819,-34.0517,Sydney South-west
+2921,ALBION PARK SOUTH,150.78252,-34.57781,Illawarra
+333,MUSWELLBROOK,150.88563,-32.27152,Upper Hunter
+330,SINGLETON,151.17707,-32.55734,Upper Hunter
+3330,MAISON DIEU,151.06183,-32.52468,Upper Hunter
+2330,CAMBERWELL,151.09188,-32.47231,Upper Hunter
+1330,SINGLETON NW,151.15006,-32.52981,Upper Hunter
+5330,MOUNT THORLEY,151.128,-32.63589,Upper Hunter
+4330,BULGA,151.03598,-32.64864,Upper Hunter
+1650,WAGGA WAGGA NORTH,147.36037,-35.10411,South-west Slopes
+1333,MUSWELLBROOK NW,150.88119,-32.25317,Upper Hunter
+2333,WYBONG,150.67342,-32.19505,Upper Hunter
+336,ABERDEEN,150.88415,-32.17718,Upper Hunter
+6330,SINGLETON SOUTH,151.20895,-32.5871,Upper Hunter
+7330,JERRYS PLAINS,150.86416,-32.46622,Upper Hunter
+8330,WARKWORTH,151.02721,-32.57398,Upper Hunter
+329,MERRIWA,150.45824,-32.12665,Upper Hunter
+2560,CAMPBELLTOWN WEST,150.79558,-34.06666,Sydney South-west
+2570,CAMDEN,150.69013,-34.04168,Sydney South-west
+4560,CATARACT,150.823516,-34.244788,Cataract RFS
+1107,LIVERPOOL SWAQS,150.93252,-33.91889,Research Monitoring 
+113,MACQUARIE PARK,151.1178,-33.76524,Sydney East
+9880,Tibooburra,142.057,-29.4448,Western LLS
+390,NARRABRI,149.82932,-30.31842,North-west Slopes
+380,GUNNEDAH,150.26069,-30.98178,North-west Slopes
+9840,Bourke,145.952,-30.0362,Western LLS
+94880,Broken Hill,141.469,-32.0012,Western LLS
+9738,Euston,142.889,-34.443,Western LLS
+9739,Buronga,142.201,-34.1747,Western LLS
+9835,Cobar,145.829,-31.4837,Western LLS
+9877,Condobolin,147.22832,-33.06646,Central West LLS
+9794,Cowra,148.65413,-33.83818,Central Tablelands LLS
+9731,Deniliquin,144.946,-35.5575,Murray LLS
+9830,Dubbo,148.578,-32.2195,Central West LLS
+9585,Kyalite,143.530932,-35.033047,Murray LLS
+9680,Griffith,146.06981,-34.24889,Riverina LLS
+9238,Gunnedah SE,150.269,-31.0261,North West LLS
+9711,Hay,144.83449,-34.5413,Riverina LLS
+9675,Hillston,145.52482,-33.49147,Western LLS
+9878,Ivanhoe,144.154,-33.0548,Western LLS
+9663,Junee,147.51,-34.8254,Riverina LLS
+9648,Lake Victoria,141.063,-34.0485,Western LLS
+9302,Lameroo,140.538,-35.3778,SA Murray Darling Basin
+92648,Pooncarie,142.531,-33.6016,Western LLS
+92551,Loddon Plains,144.319,-36.4538,North Central CMA
+92731,Moolawatana,139.737,-29.9072,SA Arid Lands
+9400,Moree,149.847,-29.4897,North West LLS
+9700,Narrandera,146.514,-34.705,Riverina LLS
+9870,Parkes,148.244,-33.1277,Central West LLS
+9642,Rand,146.475,-35.6296,Murray LLS
+9666,Temora,147.512,-34.4278,Riverina LLS
+9832,Walgett,148.123,-30.0359,North West LLS
+9507,Walpeup,142.0,-35.12,Mallee CMA
+9671,West Wyalong,147.196,-33.9384,Riverina LLS
+9836,White Cliffs,143.074,-30.8517,Western LLS
+95880,Coombah,141.618344,-32.976177,Western LLS
+9551,Wycheproof,143.355,-36.0971,North Central CMA
+92650,Wagga Wagga North2,147.36037,-35.10411,Riverina LLS
+1350,ARMIDALE,151.66173,-30.50851,Northern Tablelands
+1800,ORANGE,149.09447,-33.27429,Central Tablelands
+93496,Werrimull,141.566805,-34.466564,Mallee CMA
+802,RR POD2,150.4102,-34.4879,Incident Monitoring
+803,PORT MACQUARIE,152.88819,-31.45405,Mid-North Coast
+9350,Armidale ,151.661658,-30.50845,Northern Tablelands LLS
+61,BRADFIELD HIGHWAY,151.21109,-33.84327,Roadside Monitoring
+780,KATOOMBA,150.299588,-33.71028,Research Monitoring 
+155,ROUSE HILL,150.90366,-33.68275,Sydney North-west
+99381,Gunnedah 2,150.260666,-30.981876,North West LLS
+1001,COOK AND PHILLIP,151.21323,-33.87288,Sydney East
+1580,GOULBURN,149.72416,-34.73452,Southern Tablelands
+99801,Grafton,152.96063,-29.62236,North Coast LLS
+99802,Taree,152.50861,-31.88944,Bushfire Monitoring
+99803,Coffs Harbour,153.11806,-30.29833,Bushfire Monitoring
+450,COFFS HARBOUR,153.11811,-30.29828,Mid-North Coast
+811,LISMORE,153.293502,-28.83213,Bushfire - Lismore (offline)
+99804,Batemans Bay,150.1872,-35.7234,Bushfire Monitoring
+99805,Ulladulla,150.4828,-35.3635,Bushfire Monitoring
+99806,Merimbula,149.89893,-36.90775,South East LLS
+99807,Cooma,149.1331,-36.2226,South East LLS
+1148,PROSPECT,150.91417,-33.79424,Sydney North-west
+10000000,Central Coast,,,Central Coast
+20000000,Central Tablelands,,,Central Tablelands
+30000000,Illawarra,,,Illawarra
+40000000,Lake Macquarie,,,Lake Macquarie
+50000000,Lower Hunter,,,Lower Hunter
+60000000,Merriwa,,,Merriwa
+70000000,Mid-north Coast,,,Mid-north Coast
+80000000,North-west slopes,,,North-west slopes
+90000000,Northern Tablelands,,,Northern Tablelands
+100000000,South-west slopes,,,South-west slopes
+110000000,Southern Tablelands,,,Southern Tablelands
+120000000,Sydney north-west,,,Sydney north-west
+130000000,Sydney south-west,,,Sydney south-west
+140000000,Upper Hunter - Muswellbrook,,,Upper Hunter - Muswellbrook
+150000000,Upper Hunter - Singleton,,,Upper Hunter - Singleton
+160000000,Upper Hunter - Muswellbrook,,,Upper Hunter - Muswellbrook
+9480,Lismore,153.26275,-28.83622,North Coast LLS
+1141,LIDCOMBE,151.04676,-33.88143,Sydney East
+1750,PENRITH,150.70385,-33.72687,Sydney North-west
+264,MORISSET,151.55257,-33.10801,Lake Macquarie
+805,Test Site,151.042577,-33.884341,Test Region
+15,ALEXANDRIA,151.197267,-33.905317,Sydney East
+170000000,Upper Hunter - Singleton,,,Upper Hunter - Singleton
+62,CAMMERAY,151.216707,-33.827271,Research Monitoring 
+798,MILLTHORPE,149.185325,-33.444339,Cadia Monitoring
+9800,Forest Reef 2,149.065,-33.467,Cadia Monitoring DRX
+92800,Errowanbang 2,149.052,-33.552,Cadia Monitoring DRX
+379,MULLALEY,149.916,-31.1,Gunnedah Emergency DRX
+92380,Emerald Hill,150.1077,-30.8875,Gunnedah Emergency DRX
+1007,ULTIMO-UTS,151.2011926726,-33.8836772026,Sydney East
+9850,Mudgee,149.614822,-32.562791,Central Tablelands LLS
+951,QUIRINDI,150.661574,-31.471306,Incident Monitoring

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: nsw-pm25-air-quality-dashboard
+    runtime: python
+    plan: free
+    branch: main
+    buildCommand: python -m pip install -r requirements_render.txt
+    startCommand: gunicorn --chdir dashboard app:server --bind 0.0.0.0:$PORT
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.14

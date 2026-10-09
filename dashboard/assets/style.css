@@ -1,0 +1,220 @@
+/* Air-quality dashboard styles.
+   Layout:
+   header · location/profile controls · map (left) | trend + advice (right) · alerts.
+   Accessibility: 16 px base text, visible focus ring, skip link, AA contrast for all text,
+   layout reflows to one column on narrow screens / 200% zoom. */
+
+:root {
+  --navy: #1f3a5f;
+  --teal: #0f766e;
+  --teal-light: #e6f4f2;
+  --surface: #ffffff;
+  --page: #f3f5f7;
+  --ink: #1f1f1f;
+  --muted: #5c6670;
+  --border: #d7dde3;
+  --radius: 10px;
+  --gap: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+/* ---------- skip link (keyboard users jump straight to the content) ---------- */
+.skip-link {
+  position: absolute; left: -999px; top: 8px;
+  background: var(--surface); color: var(--navy); padding: 8px 12px; border-radius: 6px; z-index: 100;
+}
+.skip-link:focus { left: 8px; }
+
+/* ---------- visible focus ring on everything interactive ---------- */
+a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-visible,
+.Select-control:focus-within, .dash-dropdown:focus-within {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+/* ---------- header ---------- */
+.app-header {
+  background: var(--navy); color: #ffffff;
+  display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;
+  padding: 14px 24px;
+}
+.app-header h1 { margin: 0; font-size: 1.35rem; font-weight: 700; }
+.app-header .asof { font-size: 0.9rem; color: #dbe4ee; }   /* 8.6:1 on navy */
+
+/* ---------- page grid ---------- */
+.app-main {
+  max-width: 1280px; margin: 0 auto; padding: var(--gap);
+  display: grid; gap: var(--gap);
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  grid-template-areas:
+    "profile profile"
+    "map right"
+    "alerts alerts"
+    "foot foot";
+}
+.area-right { grid-area: right; display: flex; flex-direction: column; gap: var(--gap); min-width: 0; }
+.area-profile { grid-area: profile; }
+.area-map { grid-area: map; }
+.area-alerts { grid-area: alerts; }
+.app-footer { grid-area: foot; color: var(--muted); font-size: 0.85rem; padding: 4px 4px 16px; }
+
+@media (max-width: 900px) {        /* one column on tablets/phones and at high zoom */
+  /* minmax(0, 1fr), not 1fr: a chart drawn at desktop width must not hold the column open when the window is
+     narrowed or zoomed to 200-400% (WCAG 1.4.10 Reflow) */
+  .app-main {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "profile" "map" "right" "alerts" "foot";
+  }
+}
+
+/* ---------- panels (cards) ---------- */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  min-width: 0;
+}
+.panel-title { margin: 0 0 10px 0; font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+.panel-placeholder { color: var(--muted); font-style: italic; }
+
+/* ---------- shared bits used by several panels ---------- */
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  border-radius: 999px; padding: 4px 12px; font-size: 0.9rem; font-weight: 700;
+  border: 2px solid currentColor;
+}
+.chip-profile { color: var(--teal); background: var(--teal-light); }
+.muted { color: var(--muted); }
+
+/* ---------- map ---------- */
+.map-legend { font-size: 0.95rem; margin-top: 8px; }
+.map-legend-title { color: var(--muted); }
+.map-summary p { margin: 6px 0; }
+.map-estimated-tag {
+  display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px;
+  border: 1.5px dashed var(--ink); font-size: 0.85rem; font-weight: 700;
+}
+.map-caveat, .map-hint { color: var(--muted); font-size: 0.92rem; }
+
+/* ---------- location and profile ---------- */
+.profile-row { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; }
+.profile-field { margin: 0; padding: 0; border: 0; min-width: 0; }
+.profile-field-location { flex: 1 1 280px; max-width: 380px; }
+.profile-field-profile { flex: 2 1 420px; }
+.profile-label { display: block; font-weight: 700; font-size: 0.92rem; margin-bottom: 6px; padding: 0; }
+.profile-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+/* each radio option is a pill; the real radio stays inside it (works with Dash 2.x and 4.x markup) */
+#profile-choice label {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  border: 2px solid var(--border); border-radius: 999px; padding: 6px 14px 6px 10px; font-size: 0.95rem;
+  background: var(--surface); margin: 0;
+}
+#profile-choice label:hover { border-color: var(--teal); }
+#profile-choice label:has(input:checked) { border-color: var(--teal); background: var(--teal-light); color: var(--teal); font-weight: 700; }
+#profile-choice label:focus-within { outline: 3px solid var(--teal); outline-offset: 2px; }
+.profile-chip-input { accent-color: var(--teal); width: 16px; height: 16px; margin: 0; }
+.profile-status { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 12px; }
+.profile-feedback { color: var(--teal); font-weight: 700; }
+.profile-privacy { font-size: 0.85rem; margin: 8px 0 0; }
+
+/* ---------- health advice ---------- */
+.advice-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
+.advice-category { border-radius: 8px; padding: 6px 14px; font-weight: 700; font-size: 1.1rem; }
+.advice-value { font-size: 1rem; }
+.advice-icons { list-style: none; padding: 0; margin: 4px 0 8px; display: grid;
+           grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+.advice-icon { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; }
+.advice-icon-img { width: 44px; height: 44px; }
+.advice-icon-caption { font-size: 0.85rem; }
+.advice-text { margin: 6px 0; }
+.advice-source { font-size: 0.8rem; }
+
+/* brief highlight when the advice changes (visible feedback); skipped for users who prefer less motion */
+/* two identically-shaped animations with different names, so switching class replays the highlight */
+@keyframes advice-pulse-a { from { box-shadow: 0 0 0 3px var(--teal); } to { box-shadow: 0 0 0 0 transparent; } }
+@keyframes advice-pulse-b { from { box-shadow: 0 0 0 3px var(--teal); } to { box-shadow: 0 0 0 0 transparent; } }
+.advice-card { border-radius: 8px; padding: 4px; }
+.pulse-a { animation: advice-pulse-a 1.2s ease-out; }
+.pulse-b { animation: advice-pulse-b 1.2s ease-out; }
+@media (prefers-reduced-motion: reduce) { .pulse-a, .pulse-b { animation: none; } }
+
+/* ---------- PM2.5 trend ---------- */
+.trend-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; }
+.trend-head .panel-title { margin-bottom: 4px; }
+.trend-range { display: flex; flex-wrap: wrap; gap: 6px; }
+/* range buttons use the same pill treatment as the profile choices */
+#trend-range label {
+  display: inline-flex; align-items: center; gap: 6px; cursor: pointer; margin: 0;
+  border: 2px solid var(--border); border-radius: 999px; padding: 4px 12px 4px 8px; font-size: 0.9rem;
+  background: var(--surface);
+}
+#trend-range label:hover { border-color: var(--navy); }
+#trend-range label:has(input:checked) { border-color: var(--navy); background: var(--navy); color: #ffffff; font-weight: 700; }
+#trend-range label:focus-within { outline: 3px solid var(--teal); outline-offset: 2px; }
+.trend-range-input { accent-color: var(--navy); width: 14px; height: 14px; margin: 0; }
+.trend-summary p { margin: 6px 0; }
+.trend-note { color: var(--muted); font-size: 0.92rem; }
+.trend-details summary { cursor: pointer; color: var(--navy); font-weight: 700; font-size: 0.92rem; margin-top: 4px; }
+.trend-details[open] { max-height: 320px; overflow-y: auto; }
+.trend-table { border-collapse: collapse; width: 100%; font-size: 0.9rem; margin-top: 6px; }
+.trend-table th, .trend-table td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--border); }
+.trend-table th { position: sticky; top: 0; background: var(--surface); }
+
+/* ---------- alerts ---------- */
+.alert-row { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr) minmax(0, 1fr); gap: 20px; }
+@media (max-width: 900px) { .alert-row { grid-template-columns: 1fr; } }
+.alert-sub { font-size: 0.95rem; margin: 0 0 8px; color: var(--ink); }
+.alert-sub label { font-weight: 700; }
+.alert-banner { border-radius: 8px; padding: 10px 12px; border: 2px solid var(--border); border-left-width: 8px; }
+.alert-banner p { margin: 0 0 4px; }
+.alert-ok    { border-color: #1b9e4b; background: #eef8f1; }
+.alert-active { border-color: #a3122a; background: #fdf0f1; }
+.alert-seen  { border-style: dashed; border-left-style: solid; }
+.alert-none  { color: var(--muted); }
+.alert-mark {
+  display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; margin-right: 6px;
+  border-radius: 50%; font-weight: 700; font-size: 0.9rem; background: var(--ink); color: #ffffff;
+}
+.alert-ok .alert-mark { background: #1b7a3e; }
+.alert-active .alert-mark { background: #a3122a; }
+.alert-chip { border-radius: 6px; padding: 1px 8px; font-weight: 700; font-size: 0.88rem; }
+.alert-cap, .alert-scope { font-size: 0.85rem; }
+.alert-threshold-text { margin: 10px 0 8px; }
+.alert-button, .alert-link-button { font: inherit; cursor: pointer; }
+.alert-button {
+  border: 2px solid var(--teal); color: var(--teal); background: var(--surface); border-radius: 999px;
+  padding: 4px 14px; font-weight: 700; font-size: 0.9rem;
+}
+.alert-button:hover { background: var(--teal-light); }
+.alert-link-button { border: 0; background: none; padding: 0; margin-top: 8px; color: var(--navy); text-decoration: underline; font-size: 0.85rem; }
+.alert-history-text { font-size: 0.9rem; margin: 4px 0 0; }
+/* brief highlight when a NEW alert appears; skipped for users who prefer less motion */
+@keyframes alert-flash { from { box-shadow: 0 0 0 4px rgba(163, 18, 42, 0.45); } to { box-shadow: 0 0 0 0 transparent; } }
+.alert-new { animation: alert-flash 1.4s ease-out 2; }
+@media (prefers-reduced-motion: reduce) { .alert-new { animation: none; } }
+#alert-panel { --Dash-Fill-Interactive-Strong: var(--teal); }   /* slider handle in the theme teal (5.5:1 on white) */
+
+/* ---------- accessibility — WCAG 2.2 AA ---------- */
+/* slider: visible focus ring (2.4.7) and a 24 px thumb (2.5.8 target size) */
+.dash-slider-thumb { width: 24px !important; height: 24px !important; }
+.dash-slider-thumb:focus-visible { outline: 3px solid var(--teal) !important; outline-offset: 3px; }
+.dash-range-slider-input:focus-visible, .dash-input-container:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+/* small text buttons still get a 24 px target */
+.alert-link-button { min-height: 24px; }
+.trend-details summary { min-height: 24px; display: list-item; }
+.trend-details summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+/* respect Windows High Contrast / forced colours: keep borders that carry meaning */
+@media (forced-colors: active) {
+  .chip, .advice-category, .alert-chip, .map-estimated-tag, .alert-banner { border: 2px solid CanvasText; }
+}

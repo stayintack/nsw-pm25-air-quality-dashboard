@@ -1,0 +1,8 @@
+# Tested in clean environments on 6 Oct 2026 (Python 3.10, 3.11, 3.12):
+#   newest  dash 4.4.1, plotly 7.1.0, pandas 3.0.6, numpy 2.5.3
+#   oldest  dash 4.4.1, plotly 5.24.0, pandas 2.0.3, numpy 1.24.4
+# Dash 4.4+ is required: the page layout, keyboard search and accessibility fixes target Dash 4.4's components.
+dash>=4.4,<5
+plotly>=5.24,<8
+pandas>=2.0,<4
+numpy>=1.24,<3
